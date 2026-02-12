@@ -1,0 +1,45 @@
+{
+  "name": "C++ Launch",
+  "type": "cppdbg",
+  "request": "launch",
+  "program": "${workspaceFolder}/a.out",
+  "args": ["arg1", "arg2"],
+  "environment": [{ "name": "config", "value": "Debug" }],
+"cwd": "${workspaceFolder}",
+"configurations": [
+    {
+        "type": "java",
+        "name": "MatrixOprations",
+        "request": "launch",
+        "mainClass": "MatrixOprations",
+        "projectName": "Pra_a3089680"
+    },
+    {
+        "type": "java",
+        "name": "MatrixOperations",
+        "request": "launch",
+        "mainClass": "MatrixOperations",
+        "projectName": "Pra_a3089680"
+    },
+    {
+        "name": "(gdb) Attach",
+        "type": "cppdbg",
+        "request": "attach",
+        "program": "enter program name, for example ${workspaceFolder}/a.exe",
+        "MIMode": "gdb",
+        "miDebuggerPath": "/path/to/gdb",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            },
+            {
+                "description": "Set Disassembly Flavor to Intel",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+            }
+        ]
+    }
+]
+}
