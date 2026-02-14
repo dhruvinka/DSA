@@ -10,13 +10,13 @@ class Queue:
         return (self.r+1) % self.size == self.f
     
     def is_Empty(self):
-         return  self.r==-1
+         return  self.f == -1
     
     def Enqueue(self,val):
         if self.is_full():
             print("Queue is Full")
         else:
-            if self.f ==-1:
+            if self.f == -1:
                 self.f+=1
             if self.r==self.size-1 and self.f!=0:
                  self.r=0
@@ -29,43 +29,41 @@ class Queue:
         if self.is_Empty():
             print("Queue is Empty")
         else:
-            if self.f == self.size-1:
-                self.f=0
+            if self.f == self.r:
+                val =self.q[self.f]
                 self.q[self.f]=None
+                self.f=-1
+                self.r=-1
             else:
                 val =self.q[self.f]
                 self.q[self.f]=None
                 self.f+=1
+            return val
 
     def dislay(self):
         print(self.f)
         print(self.r)
         print(self.q)
 
-__name__="__main__"
-s=Queue(5)
-s.Enqueue(1)
-s.Enqueue(1)
-s.Enqueue(1)
-s.Enqueue(1)
-s.Enqueue(1)
-s.dislay()
-s.Dequeue()
-s.Dequeue()
-s.Dequeue()
-s.Dequeue()
-s.Enqueue(20)
-s.Enqueue(30)
-s.Enqueue(40)
-s.Enqueue(50)
-s.Dequeue()
-s.dislay()
-s.Dequeue()
-s.dislay()
-s.Dequeue()
-s.dislay()
-s.Dequeue()
-s.dislay()
+
+# __name__="__main__"
+# s=Queue(5)
+# s.Enqueue(1)
+# s.Enqueue(1)
+# s.Enqueue(1)
+# s.Enqueue(1)
+# s.Enqueue(1)
+# s.Enqueue(1)
+# s.dislay()
+# s.Dequeue()
+# s.Dequeue()
+# s.Dequeue()
+# s.Dequeue()
+# s.Dequeue()
+# s.Dequeue()
+# s.dislay()
+
+
 
 
 
