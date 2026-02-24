@@ -53,6 +53,4 @@ if __name__ == "__main__":
     s.Dequeue()
     s.Dequeue()
     s.display()
-    
-    s.Enqueue(60) 
-    s.display()
+ 
