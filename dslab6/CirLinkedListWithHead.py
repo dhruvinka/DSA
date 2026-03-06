@@ -22,7 +22,7 @@ class cirlinkedwithhead:
     
     def insert_at_beg(self,data):
 
-        new_node=Node(data);
+        new_node=Node(data)
         if self.head is None:
             self.head=new_node
             new_node.next=self.head
@@ -123,9 +123,26 @@ class cirlinkedwithhead:
 
     def size_of_LinkedList(self):
          print(self.size)
-                
+
+
+    def remove_middle_element(self):
+         # if ther is tie  ex 2.5 them go to 3 not 2
+            if self.head is None:
+                    return False
+            if self.head.next == self.head:
+                    self.head =None
+            else:
+                    slow=self.head
+                    fast=self.head
+                    prev=None
+                    while fast and fast.next != self.head:
+                            prev=slow
+                            slow=slow.next
+                            fast=fast.next.next
+                    prev.next=slow.next
          
-                
+        
+                   
     
     def display(self):
         if self.head is None:
@@ -145,18 +162,20 @@ class cirlinkedwithhead:
     
 
 
-s1=cirlinkedwithhead();
+s1=cirlinkedwithhead()
 s1.insert_at_beg(20)
 s1.insert_at_beg(30)
 s1.insert_at_end(40)
-s1.insert_at_end(50)
+# s1.insert_at_end(50)
 s1.insert_at_pos(1,100)
+
 s1.display()
-print("delete AT FIRST")
-s1.delete_at_first()
-s1.display()
-print("delete AT FIRST")
-s1.delete_at_last()
+# print("delete AT FIRST")
+# s1.delete_at_first()
+# s1.display()
+# print("delete AT FIRST")
+# s1.delete_at_last()
+s1.remove_middle_element()
 s1.display()
 # s1.size_of_LinkedList()
 
