@@ -146,7 +146,7 @@ class cirlinkedwithhead:
     
     def display(self):
         if self.head is None:
-            return "No Node"
+            return "List is empty"
         
         curr= self.head
         while curr.next != self.head:
