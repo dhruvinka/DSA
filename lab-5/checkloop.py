@@ -10,17 +10,35 @@ class LinkedList:
         if self.head is None:
             print("Linked List is empty")
         else:
-            temp= self.head
-            while temp is not None:
-                print(temp.data, end= "->")
-                temp= temp.next
-            print()
+            current=self.head
+            
+            while current.next is not self.head:
+                print(current.data, end= "->")
+                current= current.next
+            print(current.data, end= "->")
+
+
 
     def insert_at_beg(self,data):
+
         new_node=Node(data)
-        new_node.next=self.head
-        self.head=new_node
-        self.size+=1
+
+        if self.head is None:
+            self.head=new_node
+            new_node.next=self.head  # circuler new node point it self
+            self.size+=1
+        else:
+            new_node.next=self.head
+            
+            current=self.head
+            while current.next is not self.head:
+                current=current.next
+            
+            self.head=new_node 
+            current.next=self.head
+            self.size+=1
+
+
 
     def insert_at_end(self,data):
         
@@ -28,14 +46,20 @@ class LinkedList:
 
         if self.head is None:
             new_node.next=self.head
+            new_node.next=self.head
+
             self.size+=1
             return
         current=self.head
-
-        while current.next is not None:
+         
+        # go to the last node
+        while current.next is not self.head:
             current=current.next
 
         current.next=new_node
+        
+        # at last node point to first
+        new_node.next=self.head
         self.size+=1
     
     def insert_at_Between(self,data,position):
@@ -77,11 +101,13 @@ class LinkedList:
          current=self.head
          pre=None
 
-         while current.next is not None:
+        # goes to last node
+         while current.next is not self.head:
              pre=current
              current=current.next
         
-         pre.next=None
+        # at last node point to first
+         pre.next=self.head
          self.size-=1
 
     def deletea_at_Between(self,position):
@@ -111,33 +137,45 @@ class LinkedList:
         prev.next=current.next
         self.size-=1
 
-    def delete_duplicate(self):
-        current = self.head
+
+    def is_cycle(self):
+        # if yes then how many nodes are there in the cycle 
+        if self.head is None:
+            return False
         
-        while current:
-            runner = current
-            while runner.next is not None:
-                if runner.next.data == current.data:
-                    runner.next = runner.next.next
-                else:
-                    runner = runner.next
-            current = current.next
+        slow=self.head
+        fast=self.head
+        while fast and fast.next:
+            slow=slow.next
+            fast=fast.next.next
+
+            if slow==fast:
+                count=1
+                slow=slow.next
+                while slow!=fast:
+                    count+=1
+                    slow=slow.next
+                return count
         
-            
 
 
 
-# l1=LinkedList()
-# l1.insert_at_beg(10)
-# l1.insert_at_end(11)
-# l1.insert_at_end(10)
+
+
+l1=LinkedList()
+l1.insert_at_beg(10)
+l1.insert_at_beg(20)
+l1.insert_at_beg(30)
+l1.insert_at_end(11)
+# l1.insert_at_end(13)
 # l1.insert_at_Between(12,1)
-# # l1.display()
-# # l1.delete_at_first()
-# # l1.delete_at_last()
-# # l1.deletea_at_Between(1)
-# l1.delete_duplicate()
+l1.display()
+# l1.delete_at_first()
+# l1.delete_at_last()
+# l1.deletea_at_Between(1)
+# l1.insert_at_beg(30)
 # l1.display()
+print("Is cycle?", l1.is_cycle())
 
 
 
