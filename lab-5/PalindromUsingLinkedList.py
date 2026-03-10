@@ -8,33 +8,27 @@ class ispalindeom:
     def palindrome(self):
         if self.l1.head is None:
             return True
-        
-        slow = self.l1.head
-        fast = self.l1.head
-        count = 0
-        
-        while fast and fast.next:
-            count += 1
-            slow = slow.next
-            fast = fast.next.next
-        
-        tmp = slow
-        while tmp.next != None:
-            self.l2.insert_at_beg(tmp.data)  
-            tmp = tmp.next
-        self.l2.insert_at_beg(tmp.data)  
-       
+
+
         curr1 = self.l1.head
-        curr2 = self.l2.head
-        
-       
-        for i in range(count):
-            if curr1.data != curr2.data:
-                return False
-            curr1 = curr1.next
-            curr2 = curr2.next
-        
-        return True
+        while curr1.next !=None:
+            self.l2.insert_at_beg(curr1.data)
+            curr1=curr1.next
+        self.l2.insert_at_beg(curr1.data)
+
+        if self.l1.size != self.l2.size:
+            return False
+        else:
+            curr1 = self.l1.head
+            curr2 = self.l2.head
+
+            while curr1 != None:
+                if curr1.data != curr2.data:
+                    return False
+                curr1 = curr1.next
+                curr2 = curr2.next
+            return True
+
 
 x = ispalindeom()
 

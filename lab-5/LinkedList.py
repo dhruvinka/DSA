@@ -122,22 +122,40 @@ class LinkedList:
                 else:
                     runner = runner.next
             current = current.next
+
+    def is_cycle(self):
+        # if yes then how many nodes are there in the cycle 
+        if self.head is None:
+            return False
         
-            
+        slow=self.head
+        fast=self.head
+        while fast and fast.next:
+            slow=slow.next # go 1 step 
+            fast=fast.next.next # go 2 step
 
-
-
-# l1=LinkedList()
-# l1.insert_at_beg(10)
-# l1.insert_at_end(11)
-# l1.insert_at_end(10)
-# l1.insert_at_Between(12,1)
-# # l1.display()
-# # l1.delete_at_first()
-# # l1.delete_at_last()
-# # l1.deletea_at_Between(1)
-# l1.delete_duplicate()
+            if slow==fast: # in one point slow and fast meet  so cycle is there
+                count=1 
+                slow=slow.next
+                while slow!=fast: # ja sudhi biji var same no thay taya sudhi count ne ++ karo so total nodes in between cycle mali jase
+                    count+=1
+                    slow=slow.next
+                return count
+            return False
+        
+        
+l1=LinkedList()
+l1.insert_at_beg(10)
+l1.insert_at_end(11)
+l1.insert_at_end(10)
+l1.insert_at_Between(12,1)
 # l1.display()
+# l1.delete_at_first()
+# l1.delete_at_last()
+# l1.deletea_at_Between(1)
+# l1.delete_duplicate()
+print("Is cycle?", l1.is_cycle())
+l1.display()
 
 
 

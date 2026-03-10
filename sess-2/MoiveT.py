@@ -1,10 +1,13 @@
-class Queue:
+
+
+class Person :
 
     def __init__(self,size):
         self.size=size
         self.r=-1
         self.f=-1
         self.q=[None]*self.size
+        self.total=20
 
     def is_full(self):
         return (self.r+1) % self.size == self.f
@@ -12,7 +15,7 @@ class Queue:
     def is_Empty(self):
          return  self.f == -1
     
-    def Enqueue(self,val):
+    def Enqueue(self,val,tick):
         if self.is_full():
             print("Queue is Full")
         else:
@@ -20,7 +23,7 @@ class Queue:
                 self.f = 0
             
             self.r = (self.r + 1) % self.size
-            self.q[self.r] = val
+            self.q[self.r] = (val,tick)
 
     def Dequeue(self):
         if self.is_Empty():
@@ -42,25 +45,26 @@ class Queue:
         print(self.r)
         print(self.q)
 
+    
+    def enterintoQ(self,name,tickets):
+        self.Enqueue(name,tickets)
 
-# __name__="__main__"
-# s=Queue(5)
-# s.Enqueue(1)
-# s.Enqueue(1)
-# s.Enqueue(1)
-# s.Enqueue(1)
-# s.Enqueue(1)
-# s.Enqueue(1)
-# s.dislay()
-# s.Dequeue()
-# s.Dequeue()
-# s.Dequeue()
-# s.Dequeue()
-# s.Dequeue()
-# s.Dequeue()
-# s.dislay()
+    def processQ(self):
+        x=self.Dequeue()
+        print(x)
+        if self.total >= int(x[1]):
+            self.total -=int(x[1])
+            print("total Aval Tik",self.total)
+        else:
+            print("Soory..")
 
 
+        
+p1=Person(10)
+p1.enterintoQ('rema',20)
+p1.enterintoQ('kanani',5)
+p1.processQ()
+p1.processQ()
 
 
 

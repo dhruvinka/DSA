@@ -43,22 +43,22 @@ class Queue:
         print(self.q)
 
 
-# __name__="__main__"
-# s=Queue(5)
-# s.Enqueue(1)
-# s.Enqueue(1)
-# s.Enqueue(1)
-# s.Enqueue(1)
-# s.Enqueue(1)
-# s.Enqueue(1)
-# s.dislay()
-# s.Dequeue()
-# s.Dequeue()
-# s.Dequeue()
-# s.Dequeue()
-# s.Dequeue()
-# s.Dequeue()
-# s.dislay()
+__name__="__main__"
+s=Queue(5)
+s.Enqueue(1)
+s.Enqueue(1)
+s.Enqueue(1)
+s.Enqueue(1)
+s.Enqueue(1)
+s.Enqueue(1)
+s.dislay()
+s.Dequeue()
+s.Dequeue()
+s.Dequeue()
+s.Dequeue()
+s.Dequeue()
+s.Dequeue()
+s.dislay()
 
 
 

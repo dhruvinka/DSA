@@ -40,16 +40,16 @@ class Hotel {
     a[2].name = "tejas shah";
     a[2].salary = 21500;
     a[2].mo_number = 9163459769L;
-	a[3].name = "jatin modi";
+	  a[3].name = "jatin modi";
     a[3].salary = 30500;
     a[3].mo_number = 9846923419L;
-	a[4].name = "jeni luise ";
+	  a[4].name = "jeni luise ";
     a[4].salary = 25000;
     a[4].mo_number = 9265425781L;
-	a[5].name = "ruhi pandya";
+	  a[5].name = "ruhi pandya";
     a[5].salary = 20500;
     a[5].mo_number = 8467928446L;
-	a[6].name = "tejasbhai shah";
+	  a[6].name = "tejasbhai shah";
     a[6].salary = 50000;
     a[6].mo_number = 9967483187L;
 
