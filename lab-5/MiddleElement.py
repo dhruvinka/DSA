@@ -7,11 +7,18 @@ def middle_element(linked_list):
 
     current = linked_list.head
     prev=None
-
+     #first Way
     for i in range(linked_list.size//2):
         prev=current
         current=current.next
     print("Middle element is ",current.data)
+
+    sl=self.head
+    fast=self.head
+
+    while fast and fast.next:
+        sl=sl.next
+        fast=fast.next.next
     
 
 

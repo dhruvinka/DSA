@@ -36,7 +36,7 @@ class cirlinkedwithhead:
         self.size+=1
 
     def insert_at_end(self,data):
-        new_node=Node(data);
+        new_node=Node(data)
         if self.head is None:
             self.head=new_node
             new_node.next=self.head
@@ -134,12 +134,10 @@ class cirlinkedwithhead:
             else:
                     slow=self.head
                     fast=self.head
-                    prev=None
-                    while fast and fast.next != self.head:
-                            prev=slow
+                    while fast and fast.next:
                             slow=slow.next
                             fast=fast.next.next
-                    prev.next=slow.next
+                    print(slow.data)
          
         
                    
@@ -167,7 +165,7 @@ s1.insert_at_beg(20)
 s1.insert_at_beg(30)
 s1.insert_at_end(40)
 # s1.insert_at_end(50)
-s1.insert_at_pos(1,100)
+s1.insert_at_pos(2,100)
 
 s1.display()
 # print("delete AT FIRST")

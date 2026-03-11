@@ -11,7 +11,6 @@ class LinkedList:
             print("Linked List is empty")
         else:
             current=self.head
-            
             while current.next is not self.head:
                 print(current.data, end= "->")
                 current= current.next

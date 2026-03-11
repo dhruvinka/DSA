@@ -87,7 +87,7 @@ class dbLinkedListWithHeadAndTail:
         print(current.data)
 
     def size_of_linkedlist(self):
-        print(self.size);
+        print(self.size)
 
 
 
