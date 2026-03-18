@@ -40,7 +40,6 @@ class PQwithunorder():
 if __name__ == "__main__":
 
     q=PQwithunorder()
-
     q.enqueue("A",1)
     q.enqueue("B",2)    
     q.enqueue("C",2)    

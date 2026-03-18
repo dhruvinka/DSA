@@ -44,6 +44,7 @@ class CirculerLinklistWithTail:
             
             new_node=Node(data)
             new_node.next=curr
+
             prev.next=new_node
             self.size+=1
     
@@ -96,12 +97,13 @@ class CirculerLinklistWithTail:
             return
         
         curr=self.tail.next
-        while curr is not None:
-            print(curr.data,end=" -> ")
-            curr=curr.next
-            if curr == self.tail.next:
-                break
-        print()
+        while curr.next != self.tail:
+             print(curr.data,end=" -> ")
+             curr = curr.next
+        print(curr.data)
+        curr=curr.next
+        print(curr.data)
+                
 
 l1=CirculerLinklistWithTail()
 l1.insert_at_beg(100)
@@ -109,10 +111,10 @@ l1.insert_at_end(10)
 l1.insert_at_end(20)
 l1.insert_at_end(30)
 l1.display()
-l1.insert_at_pos(1, 25)
-l1.display()
-l1.delete_at_pos(1)
-l1.display()
-q1=l1.delete_at_end()
-print("Deleted data is ",q1)
-l1.display()
+# l1.insert_at_pos(1, 25)
+# l1.display()
+# l1.delete_at_pos(1)
+# l1.display()
+# q1=l1.delete_at_end()
+# print("Deleted data is ",q1)
+# l1.display()

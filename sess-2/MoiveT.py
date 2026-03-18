@@ -54,6 +54,7 @@ class Person :
         print(x)
         if self.total >= int(x[1]):
             self.total -=int(x[1])
+            print("Booked sucessfully",x[1])
             print("total Aval Tik",self.total)
         else:
             print("Soory..")
@@ -61,7 +62,7 @@ class Person :
 
         
 p1=Person(10)
-p1.enterintoQ('rema',20)
+p1.enterintoQ('rema',10)
 p1.enterintoQ('kanani',5)
 p1.processQ()
 p1.processQ()

@@ -112,6 +112,20 @@ class SingleLinkedList:
 
         return slow.data
 
+    def sort_linked(self):
+        if self.head is None:
+            return
+        i=self.head
+
+        while i:
+            j=i.next
+            while j:
+                if i.data > j.data:
+                    i.data ,j.data=j.data,i.data
+                j=j.next
+            i=i.next
+
+
         
     def dis(self):
         if self.head is None:
@@ -126,8 +140,8 @@ class SingleLinkedList:
 
 l1=SingleLinkedList()
 l1.insert_At_beg(10)
-l1.insert_At_beg(20)
-l1.insert_At_end(30)
+l1.insert_At_beg(5)
+l1.insert_At_end(3)
 l1.insert_at_pos(2,40)
 l1.insert_at_pos(2,50)
 # l1.delete_at_beg()
@@ -135,5 +149,6 @@ l1.insert_at_pos(2,50)
 l1.dis()
 # l1.delete_at_pos(2)
 print(l1.middle())
+l1.sort_linked()
 l1.dis()
     

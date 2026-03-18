@@ -119,7 +119,7 @@ class CirculerLinklistWithHeadTail:
         slow=self.head
         fast=self.head
 
-        while fast !=None and fast.next != None:
+        while fast and fast.next:
             slow=slow.next
             fast=fast.next.next
 
