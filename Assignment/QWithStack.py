@@ -23,7 +23,6 @@ class Q:
         else:  
             if self.f==-1:
                 self.f+=1
-        
             self.r+=1
             self.s1.push(data)
 
@@ -44,7 +43,6 @@ class Q:
                     
                 return x
                 
-
     def display(self):
         self.s1.display()
         # self.s2.display()
@@ -55,15 +53,12 @@ if __name__=="__main__":
     q1=Q(5)
     q1.enqueue(30)
     q1.enqueue(40)
-    print('d 30',q1.dqueue())
     q1.enqueue(50)
     q1.enqueue(60)
-    print('d 40',q1.dqueue())
     q1.enqueue(70)
+    q1.display()
+    print('d 40',q1.dqueue())
     print('d 50',q1.dqueue())
-    print('d 60',q1.dqueue())
-    print('d 70',q1.dqueue())
-    q1.enqueue(80)
     q1.display()
 
 

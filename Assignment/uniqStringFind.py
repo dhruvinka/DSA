@@ -11,26 +11,25 @@
 # move.  The result of this move is that the string is "aaca", 
 # of which only "aa" is possible, so the final string is "ca".
 
-x='bbaaccacdddef'
+x=input('enter the String:')
 l1=[]
 
 def finalString():
     global x
     for  i in range(len(x)-1):
-        print('i',i)
+        # print('i',i)
         if x[i] == x[i+1]:
             l1.append(i)
             l1.append(i+2)
-    print(l1)
+    # print(l1)
     
     if len(l1) > 0 :
         x=x[:l1[0]] +x [l1[1]:]
     return l1
 
 while(True):
-  
     z=finalString()
-    print(z) 
+    # print(z) 
 
     def is_Empty():
         if len(z) == 0:
@@ -41,11 +40,9 @@ while(True):
     print(x)
     
     while(z):
-        print("hii")
+        # print("hii")
         l1.clear()
         finalString()
-    
-    
     break
 
 print(x)        

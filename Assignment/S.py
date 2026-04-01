@@ -36,14 +36,14 @@ class Stack:
             return self.s[self.top]   
         
 # if __name__=="__main__":
-    # st1 = Stack(5)
-    # st2 = Stack(5)
-    # st1.push(10)
-    # st1.push(20)
-    # st1.push(30)
-    # st1.display()
-    # st1.pop()
-    # print("Top element is:",st1.peek())
+#     st1 = Stack(5)
+#     st2 = Stack(5)
+#     st1.push(10)
+#     st1.push(20)
+#     st1.push(30)
+#     st1.display()
+#     st1.pop()
+#     print("Top element is:",st1.peek())
 #     st2.push(100)
 #     st2.push(200)   
 #     st2.display()

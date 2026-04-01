@@ -8,7 +8,8 @@ s1 = Stack(50)
 s2 = Stack(50)
 s3=Stack(40)
 
-s1.push('hello3569world12478')
+n=input('enter the String:')
+s1.push(n)
 
 for i in s1.s[0]:
     if  i.isalnum():

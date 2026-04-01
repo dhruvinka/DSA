@@ -11,15 +11,14 @@ class adjacency_list:
         for i in range(self.vertices):
             print(i,"",self.list[i])
 
-    def add_edge(self,u,v):
+    def add_edge(self,u,v,wight):
            if self.is_present(u,v):
-                self.list[u].append((v,1))
-                self.list[v].append((u,1))
+                self.list[u].append((v,wight))
+                self.list[v].append((u,wight))
            else:
                print("ege is already exit")
 
     def remove_edge(self, u, v):
-
         if not self.is_present(u, v):
                 print(self.list[u])
                 # remove v in the u lists
@@ -145,7 +144,7 @@ class adjacency_list:
         result = []
         totalcost=0
         
-        while result:
+        while min_wight:
             # it will give the min wight node 
             wight,node=heapq.heappop(min_wight) 
 
@@ -154,10 +153,9 @@ class adjacency_list:
                 totalcost+=wight
 
              #now come neighbor for node 
-
-            for neighbor,wight in self.list[node]:
+                for neighbor,wight in self.list[node]:
                 # neighbor is not visited then add in to heapq
-                if not visited[neighbor]: 
+                 if not visited[neighbor]: 
                     heapq.heappush(min_wight,(wight,neighbor))
         return totalcost  
 
@@ -174,11 +172,13 @@ class adjacency_list:
         
 al=adjacency_list(5)
 print(al.list)
-al.add_edge(2,3)
-al.add_edge(1,2)
-al.add_edge(0,2)
-al.add_edge(0,1)
-al.add_edge(1,3)
+al.add_edge(2,3,10)
+# al.add_edge(3,2,20)
+al.add_edge(1,2,20)
+# al.add_edge(2,1,22)
+al.add_edge(0,2,30)
+al.add_edge(0,1,40)
+al.add_edge(1,3,5)
 # al.add_edge(2,3)
 # al.display()
 # al.remove_edge(3,2)

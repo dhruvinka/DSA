@@ -23,6 +23,8 @@ class PriorityQueue:
                 print("Priority 3 Queue is Full")
             else:
                 self.q3.Enqueue(val)
+        else:
+            print("Invalid priority")
 
     def Dequeue(self):
         if not self.q1.is_Empty():
@@ -57,9 +59,9 @@ s.Dequeue()
 s.Dequeue()
 s.Dequeue()
 s.Dequeue()
-s.Dequeue()
-s.Dequeue()
-s.Dequeue()
+# s.Dequeue()
+# s.Dequeue()
+# s.Dequeue()
 s.display()
      
 

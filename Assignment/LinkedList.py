@@ -23,11 +23,10 @@ class LinkedList:
         self.size+=1
 
     def insert_at_end(self,data):
-        
         new_node=Node(data)
-
         if self.head is None:
             new_node.next=self.head
+            self.head=new_node
             self.size+=1
             return
         current=self.head
@@ -37,6 +36,7 @@ class LinkedList:
 
         current.next=new_node
         self.size+=1
+
     
     def insert_at_Between(self,data,position):
 
@@ -149,7 +149,7 @@ class LinkedList:
 # l1.insert_at_end(11)
 # l1.insert_at_end(10)
 # l1.insert_at_Between(12,1)
-# # l1.display()
+# l1.display()
 # # l1.delete_at_first()
 # # l1.delete_at_last()
 # # l1.deletea_at_Between(1)

@@ -114,24 +114,56 @@ class LinkedList:
         prev.next=current.next
         self.size-=1
 
-    def delete_duplicate(self):
-        current = self.head
+    def deletea_by_value(self,val):
+        # zero index base start
         
-        while current:
-            runner = current
-            while runner.next is not None:
-                if runner.next.data == current.data:
-                    runner.next = runner.next.next
-                else:
-                    runner = runner.next
-            current = current.next
-        
-            
+        if self.head.data == val:
+            self.delete_at_first()
+            return
 
+        # if position == self.size-1:
+        #     self.delete_at_last()
+        #     return
+
+        current = self.head
+        prev=None
+        while current.data != val:
+            prev=current
+            current=current.next
+        
+        print("final prev",prev.data)
+        print("final current",current.data)
+        prev.next=current.next
+        self.size-=1
+
+    def delete_duplicate(self):
+        curr = self.head
+
+        if self.size > 1:
+            while curr is not None:
+                prev = curr
+                x = curr
+                # prev one step for compaire
+                prev = curr.next
+
+                while prev is not None:
+                    if prev.data == curr.data:
+                        # if same then x now point prev.next and prev also point same
+                        x.next = prev.next
+                        prev = prev.next
+                    else:
+                        # not then x ++ and prev ++
+                        x = prev
+                        prev = prev.next
+
+                curr = curr.next
+        else:
+            print("Linked list has 0 or 1 element")
 
 
 l1=LinkedList()
 l1.insert_at_beg(10)
+l1.insert_at_end(11)
 l1.insert_at_end(11)
 l1.insert_at_end(10)
 l1.insert_at_Between(12,1)
@@ -139,6 +171,8 @@ l1.insert_at_Between(12,1)
 # l1.delete_at_first()
 # l1.delete_at_last()
 # l1.deletea_at_Between(1)
+# l1.deletea_by_value(11)
+# l1.display()
 l1.delete_duplicate()
 l1.display()
 
