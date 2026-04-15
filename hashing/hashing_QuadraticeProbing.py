@@ -23,6 +23,17 @@ class hashing_QuadraticProbing:
                         index=(index+i**2) % self.size
                         i+=1
                 return False
+        
+        def delete(self,data):
+                index=self.hash_function(data)
+                i=1
+                while self.table[index] is not None:
+                        if self.table[index]==data:
+                                self.table[index]=None
+                                return True
+                        index=(index+i**2) % self.size
+                        i+=1
+                return False
 
 
 if __name__ == "__main__":

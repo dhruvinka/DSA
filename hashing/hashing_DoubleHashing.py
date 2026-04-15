@@ -1,6 +1,6 @@
 class hashing_DoubleHashing:
     def __init__( self):
-        self.size = 10
+        self.size = 15
         self.table = [None] * self.size
 
     def hash_function(self,data):
@@ -11,18 +11,17 @@ class hashing_DoubleHashing:
     
     def insert(self,data):
         index = self.hash_function(data)
-        if self.table[index] is None:
-            self.table[index] = data
-        else:
-            i = 1
-            while self.table[index] is not None:
+        
+        i = 1
+        while self.table[index] is not None:
                 index = (index + i * self.hash_function2(data)) % self.size
                 i += 1
-            self.table[index] = data
+        self.table[index] = data
         
         
     def search(self,data):
         index=self.hash_function(data)
+        
         if self.table[index] is None:
             return False
         else:
@@ -32,6 +31,10 @@ class hashing_DoubleHashing:
                     return index
                 index = (index + i * self.hash_function2(data)) % self.size
                 i += 1
+
+                if i == self.size:  
+                    return False
+                    
             return False
 
 

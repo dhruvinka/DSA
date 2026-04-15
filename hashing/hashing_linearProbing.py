@@ -19,6 +19,15 @@ class hashing_linearProbing:
                                 return index
                         index=(index+1)%self.size
                 return False
+        
+        def delete(self,data):
+                index=self.hash_function(data)
+                while self.table[index] is not None:
+                        if self.table[index]==data:
+                                self.table[index]=None
+                                return True
+                        index=(index+1)%self.size
+                return False
 
 
 if __name__ == "__main__":

@@ -16,7 +16,7 @@ class adjacency_list:
                 self.list[u].append((v,1))
                 self.list[v].append((u,1))
            else:
-               print("ege is already exit")
+               print("edge is already present")
 
     def remove_edge(self, u, v):
 

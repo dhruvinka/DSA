@@ -17,6 +17,16 @@ class hash_chaining:
             return self.table[index].index(data)
         else:
             return False
+    
+    def delete(self,data):
+        index=self.hash_function(data)
+        if data in self.table[index]:
+            self.table[index].remove(data)
+            return True
+        else:
+            return False
+        
+    
 
 if __name__ == "__main__":
     hash_table = hash_chaining()
@@ -30,3 +40,4 @@ if __name__ == "__main__":
     print(hash_table.table)
     print(hash_table.search(20))  
     print(hash_table.search(40)) 
+    print(hash_table.delete(40)) 
