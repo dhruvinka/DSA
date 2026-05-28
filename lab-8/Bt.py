@@ -1,66 +1,71 @@
-# 1.  Write a program to do the following operations. 
-# a.  Create a Binary Tree by collecting information from users. 
-# b.  Traverse the created trees using  
-# i.  preorder  
-# ii.  postorder  
-# iii.  inorder
-
-class root:
+class Node:
     def __init__(self, data):
         self.data = data
         self.left = None
         self.right = None
 
-class BinaryTree:
-    def __init__(self):
-        self.root = None
 
-    def insert(self, data):
-        if self.root is None:
-            self.root = root(data)
-        else:
-            self._insert_recursive(self.root, data)
+def insert(root, key):
+    if root is None:
+        return Node(key)
 
-    def _insert_recursive(self, root, data):
-        if data < root.data:
-            if root.left is None:
-                root.left = root(data)
-            else:
-                self._insert_recursive(root.left, data)
-        else:
-            if root.right is None:
-                root.right = root(data)
-            else:
-                self._insert_recursive(root.right, data)
+    if key < root.data:
+        root.left = insert(root.left, key)
+    else:
+        root.right = insert(root.right, key)
 
-    def preorder_traversal(self, root):
-        if root:
-            print(root.data, end=' ')
-            self.preorder_traversal(root.left)
-            self.preorder_traversal(root.right)
+    return root
 
-    def postorder_traversal(self, root):
-        if root:
-            self.postorder_traversal(root.left)
-            self.postorder_traversal(root.right)
-            print(root.data, end=' ')
+# Inorder (Left, Root, Right)
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.data, end=" ")
+        inorder(root.right)
 
-    def inorder_traversal(self, root):
-        if root:
-            self.inorder_traversal(root.left)
-            print(root.data, end=' ')
-            self.inorder_traversal(root.right)
+# Preorder (Root, Left, Right)
+def preorder(root):
+    if root:
+        print(root.data, end=" ")
+        preorder(root.left)
+        preorder(root.right)
 
-if __name__ == "__main__":
-    tree = BinaryTree()
-    n = int(input("Enter the number of roots: "))
-    for _ in range(n):
-        data = int(input("Enter root value: "))
-        tree.insert(data)
+# Postorder (Left, Right, Root)
+def postorder(root):
+    if root:
+        postorder(root.left)
+        postorder(root.right)
+        print(root.data, end=" ")
 
-    print("Preorder Traversal:")
-    tree.preorder_traversal(tree.root)
-    print("\nPostorder Traversal:")
-    tree.postorder_traversal(tree.root)
-    print("\nInorder Traversal:")
-    tree.inorder_traversal(tree.root)
+# Level Order (BFS)
+def level_order(root):
+    if root is None:
+        return
+    
+    queue = [root]
+    
+    while queue:
+        current = queue.pop(0)
+        print(current.data, end=" ")
+        
+        if current.left:
+            queue.append(current.left)
+        if current.right:
+            queue.append(current.right)
+
+root = None
+values = [50, 30, 70, 20, 40, 60, 80]
+for v in values:
+    root = insert(root, v)
+
+print("Inorder Traversal:")
+inorder(root)
+
+print("\nPreorder Traversal:")
+preorder(root)
+
+print("\nPostorder Traversal:")
+postorder(root)
+
+print("\nLevel Order Traversal:")
+level_order(root)

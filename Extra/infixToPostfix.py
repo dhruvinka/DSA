@@ -28,3 +28,5 @@ for token in tokens:
 while not s1.isEmpty():
         postfix.append(s1.pop())
 print(' '.join(postfix))
+
+

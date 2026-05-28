@@ -149,13 +149,14 @@ class LinkedList:
             slow=slow.next # go 1 step 
             fast=fast.next.next # go 2 step
 
-            if slow==fast: # in one point slow and fast meet  so cycle is there
-                count=1 
-                slow=slow.next
-                while slow!=fast: # ja sudhi biji var same no thay taya sudhi count ne ++ karo so total nodes in between cycle mali jase
-                    count+=1
-                    slow=slow.next
-                return count
+            if slow==fast:
+                return True # in one point slow and fast meet  so cycle is there
+                # count=1 
+                # slow=slow.next
+                # while slow!=fast: # ja sudhi biji var same no thay taya sudhi count ne ++ karo so total nodes in between cycle mali jase
+                #     count+=1
+                #     slow=slow.next
+                # return count
         return False
         
 

@@ -1,7 +1,7 @@
 arr=[50,40,30,20,10,5,3]
 
 def merge_sort(arr):
-    if len(arr) <=1 :
+    if len(arr) == 1 :
         return arr
     
     mid = len(arr) // 2

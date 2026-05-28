@@ -12,17 +12,12 @@ arr=[57,23,75,19,10]
 
 
 
-for i in range(len(arr)):
+for i in range(1,len(arr)):
     key=arr[i]
-    print("key",key)
     j=i-1
-    print("j",j)
     while j>=0 and arr[j]>key:
-        print("Comparing", arr[j], "and", key,'j',j)
         arr[j+1]=arr[j]
-      
-      
-        print(arr)
+        # print(arr)
         j-=1
     arr[j+1]=key
 

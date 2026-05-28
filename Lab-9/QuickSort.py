@@ -40,6 +40,7 @@ class QuickSort:
                 arr[i], arr[j] = arr[j], arr[i]
             else:
                 break
+            
         arr[low], arr[j] = arr[j], arr[low]
         return j
 

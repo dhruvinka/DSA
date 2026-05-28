@@ -1,15 +1,17 @@
 class adjacency_matrix:
     def __init__(self,num_vertices):
         self.vertices=num_vertices
-        # self.matrix=[[0 for i in range(num_vertices)]for i in range(num_vertices)]
-        self.matrix=[]
+        self.matrix=[[0 for i in range(num_vertices)]for i in range(num_vertices)]
+        # self.matrix=[]
         # or
 
-        for i in range(num_vertices):
-            e=[]
-            for j in range(num_vertices):
-                e.append(0)
-            self.matrix.append(e)
+        # for i in range(num_vertices):
+        #     e=[]
+        #     for j in range(num_vertices):
+        #         e.append(0)
+        #     self.matrix.
+        # 
+        # append(e)
 
     def display(self):
         for i in range(len(self.matrix)):
@@ -129,3 +131,5 @@ al.count_edge_list()
 # print(al.bfs(0))
 # print(al.dfs(0))
 print(al.dfs_stack(0))
+
+

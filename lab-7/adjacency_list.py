@@ -34,6 +34,7 @@ class adjacency_list:
         # check if v is already in u 
         # extract vertice bcz we store vertice and 1 both so node is vertice and val is  1
         for node, val in self.list[u]:
+            print("node and value",node,val)
             if node == v:
                 return False   
         return True

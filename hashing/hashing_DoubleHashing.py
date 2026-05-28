@@ -11,7 +11,6 @@ class hashing_DoubleHashing:
     
     def insert(self,data):
         index = self.hash_function(data)
-        
         i = 1
         while self.table[index] is not None:
                 index = (index + i * self.hash_function2(data)) % self.size
